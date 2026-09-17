@@ -1,5 +1,14 @@
+.page{
+    background-color: var(--backgroun-color2);
+}
+
+.main{
+    justify-self: center;
+}
+
 .content {
-    padding: 0 10px;
+    justify-self: center;
+    padding: 10px;
 }
 
 .gameList {

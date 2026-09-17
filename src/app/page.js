@@ -1,8 +1,8 @@
-import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { glob } from 'node:fs/promises';
 import path from 'path';
+import NavBar from "@/components/NavBar";
 
 export default async function Home() {
   const games = []
@@ -17,15 +17,20 @@ export default async function Home() {
     }
   }
   return (
-    <div className={styles.content}>
-      <h1 className={styles.title}>Games Availiable:</h1>
-      <ul className={styles.gameList}>
-        {games.map((game) => (
-          <li key={game.id}>
-            <Link href={`/games/${game.id}`}>{game.desc}</Link>
-          </li>
-        ))}
-      </ul>
+    <div className={styles.page}>
+      <main className={styles.main}>
+        <NavBar />
+        <div className={styles.content}>
+          <h1 className={styles.title}>Games Availiable:</h1>
+          <ul className={styles.gameList}>
+            {games.map((game) => (
+              <li key={game.id}>
+                <Link href={`/games/${game.id}`}>{game.desc}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </main>
     </div>
   );
 }

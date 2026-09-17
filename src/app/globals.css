@@ -4,6 +4,23 @@
   --font-color: #000000;
 }
 
+body{
+  display: flex;
+  background-color: var(--background-color);
+}
+
+footer {
+  grid-column: 2;
+  display: flex;
+  border-top: 2px solid var(--font-color);
+  background-color: var(--backgroun-color2);
+}
+
+footer p {
+  padding: 5px;
+  margin: auto;
+}
+
 nav{
   border-bottom: 2px solid var(--font-color);
 }
@@ -16,22 +33,6 @@ nav{
   margin: 0;
 }
 
-body{
-  display: flex;
-  background-color: var(--background-color);
-}
-
-.page{
-  margin: auto;
-  background-color: var(--backgroun-color2);
-}
-
-footer {
-  display: flex;
-  border-top: 2px solid var(--font-color);
-}
-
-footer p {
-  padding: 5px;
+#wrapper{
   margin: auto;
 }
