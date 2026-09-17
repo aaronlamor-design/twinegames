@@ -1,6 +1,6 @@
 .gameview {
-    height: 90.5vh;
-    width: 98.5vw;
+    height: 90vh;
+    width: 98vw;
     margin: 5px;
     border: 2px solid var(--font-color);
 }
