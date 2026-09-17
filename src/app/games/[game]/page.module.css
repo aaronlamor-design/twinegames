@@ -1,8 +1,5 @@
-.content{
-    background-color: #ffffff;
-}
-
 .gameview {
-    height: 93vh;
-    width: 99vw
+    height: 90.5vh;
+    width: 98.5vw;
+    margin: 5px;
 }

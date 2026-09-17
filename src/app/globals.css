@@ -1,5 +1,36 @@
-nav ul{
+:root{
+  --background-color: #FFFFFA;
+  --backgroun-color2: #BDD9BF;
+  --font-color: #000000;
+}
+
+nav{
+  border-bottom: 2px solid var(--font-color);
+}
+
+#navList{
   list-style-type: none;
   display: flex;
   gap: 10px;
+  padding: 5px;
+  margin: 0;
+}
+
+body{
+  display: flex;
+  background-color: var(--background-color);
+}
+
+.page{
+  background-color: var(--backgroun-color2);
+}
+
+footer {
+  display: flex;
+  border-top: 2px solid var(--font-color);
+}
+
+footer p {
+  padding: 5px;
+  margin: auto;
 }
