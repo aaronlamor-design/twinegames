@@ -25,8 +25,10 @@ export default async function Home() {
           <ul className={styles.gameList}>
             {games.map((game) => (
               <li key={game.id}>
-                <Link href={`/games/${game.id}`}>{game.desc}</Link>
-                <Link herf={game.file}>download</Link>
+                <div class={styles.listItem}>
+                  <Link href={`/games/${game.id}`}>{game.desc}</Link>
+                  <Link href={game.file} download={game.desc} class={styles.download}>download</Link>
+                </div>
               </li>
             ))}
           </ul>

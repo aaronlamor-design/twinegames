@@ -21,3 +21,13 @@
     padding: 0;
     margin: 0;
 }
+
+.download{
+    font-size: small;
+    padding-top: 6.58px;
+}
+
+.listItem{
+    display: flex;
+    gap: 2px;
+}
