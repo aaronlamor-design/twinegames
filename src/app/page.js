@@ -12,7 +12,7 @@ export default async function Home() {
       const removeFolder = url.replace(/^.*\\/, '');
       const removeUnderscores = removeFolder.replace(/_/g, ' ')
       const desc = removeUnderscores.replace('.html', '')
-      games.push({id: entry, desc: desc})
+      games.push({id: entry, desc: desc, file:url})
       break;
     }
   }
@@ -26,6 +26,7 @@ export default async function Home() {
             {games.map((game) => (
               <li key={game.id}>
                 <Link href={`/games/${game.id}`}>{game.desc}</Link>
+                <Link herf={game.file}>download</Link>
               </li>
             ))}
           </ul>
