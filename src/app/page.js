@@ -9,13 +9,17 @@ export default async function Home() {
   const publicDir = path.join(process.cwd(), 'public');
   for await (const entry of glob(`*/`, { cwd: publicDir })) {
     for await (const url of glob(`${entry}/*.html`, { cwd: publicDir })) {
-      for await (const zip of glob(`${entry}/*.zip`, { cwd: publicDir })) {
+      const zipMatches=[]
+    for await (const zip of glob(`${entry}/*.zip`, { cwd: publicDir })) {
+      zipMatches.push(zip)
+      break;
+    }
+        const zipFile = zipMatches.length > 0 ? zipMatches[0] : null;
         const removeFolder = url.replace(/^.*\\/, '');
         const removeUnderscores = removeFolder.replace(/_/g, ' ')
         const desc = removeUnderscores.replace('.html', '')
-        games.push({id: entry, desc: desc, file: zip})
+        games.push({id: entry, desc: desc, file: zipFile})
         break;
-      }
     }
   }
   return (
@@ -29,7 +33,9 @@ export default async function Home() {
               <li key={game.id}>
                 <div className={styles.listItem}>
                   <Link href={`/games/${game.id}`}>{game.desc}</Link>
-                  <Link href={game.file} download={game.desc} className={styles.download}>download</Link>
+                  {game.file ? (
+                    <Link href={game.file} download={game.desc} className={styles.download}>download</Link>
+                  ) : (<br></br>)}
                 </div>
               </li>
             ))}
