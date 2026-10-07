@@ -26,6 +26,10 @@ nav{
   border-bottom: 2px solid var(--font-color);
 }
 
+h1 {
+  font-size: 24;
+}
+
 #navList{
   list-style-type: none;
   display: flex;
@@ -36,4 +40,10 @@ nav{
 
 #wrapper{
   margin: auto;
+}
+
+#content {
+  margin-right: auto;
+  margin-left: auto;
+  background-color: var(--backgroun-color2);
 }

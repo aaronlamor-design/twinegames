@@ -8,19 +8,19 @@ export default async function Home({ params }) {
   const { game } = await params;
   let link = "";
   const publicDir = path.join(process.cwd(), 'public');
-  for await (const entry of glob(`${game}/*.html`, { cwd: publicDir })) {
+  const gameDir = path.join(publicDir, 'games')
+  const files = glob(`${game}/*.html`, { cwd: gameDir })
+  for await (const entry of files) {
+    console.log(entry)
     const webPath = entry.replace(/\\/g, '/');
-    link=`/${webPath}`;
+    link=`/games/${webPath}`;
     break;
   }
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <NavBar />
+      <main className={styles.page}>
         <div className={styles.content}>
           <iframe src={link} className={styles.gameview}></iframe>
         </div>
       </main>
-    </div>
   );
 }

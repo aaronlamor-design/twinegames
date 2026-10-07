@@ -1,0 +1,23 @@
+.page{
+    flex: 1;
+    padding: 5px 10px;
+}
+
+.gameList {
+    padding: 0 10px 10px 10px;
+    margin: 0 0 0 28px;
+}
+
+.title{
+    margin: 0;
+}
+
+.download{
+    font-size: small;
+    padding-top: 6.58px;
+}
+
+.listItem{
+    display: flex;
+    gap: 2px;
+}

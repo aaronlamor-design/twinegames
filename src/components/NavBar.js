@@ -5,6 +5,7 @@ export default function NavBar() {
     <nav>
         <ul id="navList">
             <li><Link href="/">Home</Link></li>
+            <li><Link href="/games">Games</Link></li>
         </ul>
     </nav>
   );

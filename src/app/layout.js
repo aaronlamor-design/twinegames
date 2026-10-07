@@ -22,7 +22,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        <div id="wrapper">
+        <div id="content">
+          <NavBar />
           {children}
           <footer>
             <p>Learn to code your own webpage at <Link href="https://scrimba.com/?via=u42d37b8">Scrimba</Link></p>

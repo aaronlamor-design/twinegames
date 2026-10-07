@@ -23,7 +23,7 @@
 # misc
 .DS_Store
 *.pem
-/public/*/
+/public/games/*
 run-dev.bat
 
 # debug

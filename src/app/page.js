@@ -1,47 +1,15 @@
-import styles from "./page.module.css";
 import Link from "next/link";
-import { glob } from 'node:fs/promises';
-import path from 'path';
-import NavBar from "@/components/NavBar";
+import styles from "./page.module.css";
 
-export default async function Home() {
-  const games = []
-  const publicDir = path.join(process.cwd(), 'public');
-  for await (const entry of glob(`*/`, { cwd: publicDir })) {
-    for await (const url of glob(`${entry}/*.html`, { cwd: publicDir })) {
-      const zipMatches=[]
-    for await (const zip of glob(`${entry}/*.zip`, { cwd: publicDir })) {
-      zipMatches.push(zip)
-      break;
-    }
-        const zipFile = zipMatches.length > 0 ? zipMatches[0] : null;
-        const removeFolder = url.replace(/^.*\\/, '');
-        const removeUnderscores = removeFolder.replace(/_/g, ' ')
-        const desc = removeUnderscores.replace('.html', '')
-        games.push({id: entry, desc: desc, file: zipFile})
-        break;
-    }
-  }
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <NavBar />
-        <div className={styles.content}>
-          <h1 className={styles.title}>Games Availiable:</h1>
-          <ul className={styles.gameList}>
-            {games.map((game) => (
-              <li key={game.id}>
-                <div className={styles.listItem}>
-                  <Link href={`/games/${game.id}`}>{game.desc}</Link>
-                  {game.file ? (
-                    <Link href={game.file} download={game.desc} className={styles.download}>download</Link>
-                  ) : (<br></br>)}
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </main>
-    </div>
-  );
+export default function Home() {
+    return (
+    <main className={styles.page}>
+        <h1>Twine Library</h1>
+        <p>The purpose of this site is to make it easier to play twine games you've already downloaded.</p>
+        <p>I don't yet know how to code the backend effectly. so in order to use this site, you are going <br></br> to have to download the source code from my github repository.</p>
+        <p>you can find the repository here: <Link href="https://github.com/aaronlamor-design/twinegames">https://github.com/aaronlamor-design/twinegames</Link></p>
+        <p>once you've downloaded the repository, extract or move any twine game you into the folder <br></br> labeled as <i>games</i> inside the <i>public</i> folder.</p>
+        <p>each html and assoicated image or img folder needs to be in a their own folder inside the <br></br> public games folder. Whatever you name you html inside theh Games folder will be the same <br></br> as the link on the games page of this website under Games Availiable.</p>
+    </main>
+    )
 }
