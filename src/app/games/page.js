@@ -2,7 +2,6 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { glob } from 'node:fs/promises';
 import path from 'path';
-import NavBar from "@/components/NavBar";
 
 export default async function Home() {
   const games = []
