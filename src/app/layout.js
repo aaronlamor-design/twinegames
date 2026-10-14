@@ -1,5 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "@/app/globals.css";
 import NavBar from "@/components/NavBar";
 import Link from "next/link";
 
@@ -22,14 +22,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        <div id="content">
           <NavBar />
           {children}
           <footer>
             <p>Learn to code your own webpage at <Link href="https://scrimba.com/?via=u42d37b8">Scrimba</Link></p>
             <p>&copy; 2026, Aaron Lamoreaux</p>
           </footer>
-        </div>
       </body>
     </html>
   );

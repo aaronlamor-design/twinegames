@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import { glob } from 'node:fs/promises';
+import { title } from "node:process";
 import path from 'path';
  
 export default async function Home({ params }) {
@@ -17,7 +18,11 @@ export default async function Home({ params }) {
   return (
       <main className={styles.page}>
         <div className={styles.content}>
-          <iframe src={link} className={styles.gameview}></iframe>
+          <iframe 
+            src={link} 
+            className={styles.gameCanvas}
+            sandbox="allow-scripts allow-same-origin allow-forms allow-downloads"
+          />
         </div>
       </main>
   );

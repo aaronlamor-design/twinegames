@@ -1,23 +1,18 @@
 .page{
-    flex: 1;
-    padding: 5px 10px;
+    background-color: var(--backgroun-color2);
+    justify-self: center;
+    width: var(--width);
+    max-width: var(--max-width);
 }
 
-.gameList {
-    padding: 0 10px 10px 10px;
-    margin: 0 0 0 28px;
-}
-
-.title{
+.gameList, .title{
     margin: 0;
 }
 
 .download{
     font-size: small;
-    padding-top: 6.58px;
 }
 
 .listItem{
     display: flex;
-    gap: 2px;
 }

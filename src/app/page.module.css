@@ -1,3 +1,14 @@
 .page{
-    padding: 0 3px;
+    background-color: var(--backgroun-color2);
+    justify-self: center;
+    width: var(--width);
+    max-width: var(--max-width);
+}
+
+.title {
+    margin: 0;
+}
+
+.text{
+    margin: 0;
 }
