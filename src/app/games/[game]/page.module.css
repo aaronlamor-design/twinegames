@@ -16,7 +16,7 @@
 .gameCanvas {
   width: var(--width);
   max-width: var(--max-width);
-  height: 52.8em;
+  height: 52.8rem;
   border: none;
   background-color: #000;
 }

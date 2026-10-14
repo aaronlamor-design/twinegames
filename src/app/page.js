@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 
 export default function Home() {
     return (
+    
     <main className={styles.page}>
         <h1 className={styles.title}>Twine Library</h1>
         <p className={styles.text}>The purpose of this site is to make it easier to play twine games you've already downloaded.<br />
