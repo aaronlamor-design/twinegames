@@ -6,6 +6,10 @@
   --max-width: 100em;
 }
 
+p{
+  line-height: 1.5;
+}
+
 body{
   display: block;
   background-color: var(--background-color);
