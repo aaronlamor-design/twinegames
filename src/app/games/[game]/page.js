@@ -1,7 +1,8 @@
 import styles from "./page.module.css";
 import { glob } from 'node:fs/promises';
-import { title } from "node:process";
 import path from 'path';
+import Link from "next/link";
+import Footer from "@/components/footer";
  
 export default async function Home({ params }) {
   const { game } = await params;
@@ -17,6 +18,12 @@ export default async function Home({ params }) {
   }
   return (
       <main className={styles.page}>
+        <nav className={styles.nav}>
+          <ul id="navList">
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/games">Games</Link></li>
+          </ul>
+        </nav>
         <div className={styles.content}>
           <iframe 
             src={link} 
@@ -24,6 +31,10 @@ export default async function Home({ params }) {
             sandbox="allow-scripts allow-same-origin allow-forms allow-downloads"
           />
         </div>
+        <footer className={styles.footer}>
+            <p>Learn to code your own webpage at <Link href="https://scrimba.com/?via=u42d37b8">Scrimba</Link></p>
+            <p>&copy; 2026, Aaron Lamoreaux</p>
+        </footer>
       </main>
   );
 }

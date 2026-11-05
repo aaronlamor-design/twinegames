@@ -48,7 +48,7 @@ h1 {
   margin: auto;
 }
 
-nav, footer {
+#nav, #footer {
   justify-self: center;
   width: var(--width);
   max-width: var(--max-width);

@@ -1,11 +1,15 @@
+:root{
+    --canvas-width: 99vw
+}
+
 .page{
     justify-self: center;
-    width: var(--width);
-    max-width: var(--max-width);
+    min-width: var(--canvas-width);
     background-color: var(--backgroun-color2);
 }
 
 .content {
+    padding: .2rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,9 +18,9 @@
 }
 
 .gameCanvas {
-  width: var(--width);
-  max-width: var(--max-width);
-  height: 52.8rem;
+  width: var(--canvas-width);
+  max-width: var(--canvas-width);
+  height: 51.8rem;
   border: none;
   background-color: #000;
 }

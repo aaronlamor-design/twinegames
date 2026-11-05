@@ -2,6 +2,8 @@ import styles from "./page.module.css";
 import Link from "next/link";
 import { glob } from 'node:fs/promises';
 import path from 'path';
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/footer";
 
 export default async function Home() {
   const games = []
@@ -19,16 +21,18 @@ export default async function Home() {
   }
   return (
       <main className={styles.page}>
-          <h1 className={styles.title}>Games Availiable:</h1>
-          <ul className={styles.gameList}>
-            {games.map((game) => (
-              <li key={game.id}>
-                <div className={styles.listItem}>
-                   <Link href={`/games/${game.id}`}>{game.desc}</Link>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <NavBar />
+        <h1 className={styles.title}>Games Availiable:</h1>
+        <ul className={styles.gameList}>
+          {games.map((game) => (
+            <li key={game.id}>
+              <div className={styles.listItem}>
+                  <Link href={`/games/${game.id}`}>{game.desc}</Link>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <Footer />
       </main>
   );
 }
