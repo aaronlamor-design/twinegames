@@ -5,10 +5,25 @@
     max-width: var(--max-width);
 }
 
-.title {
+.title, .text {
     margin: 0;
+}
+
+.title{
+    padding-left: 1rem;
 }
 
 .text{
     margin: 0;
+    padding-left: 2rem;
+}
+
+.singleIndent{
+    display: block;
+    margin-left: 1.3rem;
+}
+
+.doubleIndent{
+    display: block;
+    margin-left: 2.6rem;
 }
